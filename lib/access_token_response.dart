@@ -119,6 +119,14 @@ class AccessTokenResponse extends OAuth2Response {
   set refreshToken(String? _tkn) {
     respMap['refresh_token'] = _tkn;
   }
+  
+  String? get idToken {
+    return isValid() ? respMap['id_token'] : null;
+  }
+
+  set idToken(String? _tkn) {
+    respMap['id_token'] = _tkn;
+  }
 
   List<String>? get scope {
     var scopes;
